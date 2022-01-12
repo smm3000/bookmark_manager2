@@ -1,5 +1,14 @@
+
 <ul>
   <% @bookmarks.each do |bookmark| %>
     <li><%= bookmark %></li>
   <% end %>
 </ul>
+
+ <h1> <%= @new %></h1>
+
+<h1> Want to add another bookmark? </h1>
+<form action='/new' method='post'>
+Add bookmark: <input type='text' name='url' >
+<input type='submit' value='Create'>
+</form>

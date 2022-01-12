@@ -6,8 +6,8 @@ describe Bookmark do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
       # adding the test data
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
+      Bookmark.create('http://www.makersacademy.com')
+      Bookmark.create('http://www.google.com')
       
       bookmarks = Bookmark.all
 
@@ -15,4 +15,22 @@ describe Bookmark do
       expect(bookmarks).to include("http://www.google.com")
     end
   end
+
+  describe '#self.create' do
+    let(:url) { "http://www.bbc.co.uk" }
+
+    it 'adds a new bookmark nto the database' do
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+
+      # adds new url to database
+
+
+      Bookmark.create(url)
+
+      bookmarks = Bookmark.all
+
+      expect(bookmarks).to include("http://www.bbc.co.uk")
+    end
+  end
+
 end
