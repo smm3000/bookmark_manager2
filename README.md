@@ -4,6 +4,7 @@ Setting up the bookmarks database in bookmark manager directory:
 2. psql CREATE DATABASE bookmark_manager;
 3. psql \c bookmark_manager;
 4. Run the query in 01_create_bookmarks_table.sql
+5. Run this query to add the title column to the bookmarks table: 02_add_title_column_bookmarks_table.sql
 
 Setting up the bookmarks database in bookmark manager  test directory:
 (This will be used when the application is being tested)
@@ -11,6 +12,7 @@ Setting up the bookmarks database in bookmark manager  test directory:
 2. psql CREATE DATABASE bookmark_manager_test;
 3. psql \c bookmark_manager;
 4. Run the query in 01_create_bookmarks_table.sql
+5. Run this query to add the title column to the bookmarks table: 02_add_title_column_bookmarks_table.sql
 
 
 

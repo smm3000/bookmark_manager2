@@ -18,18 +18,15 @@ describe Bookmark do
 
   describe '#self.create' do
     let(:url) { "http://www.bbc.co.uk" }
+    #let(:title) { "BBC Homepage" }
 
     it 'adds a new bookmark nto the database' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
-      # adds new url to database
-
-
-      Bookmark.create(url)
-
-      bookmarks = Bookmark.all
-
-      expect(bookmarks).to include("http://www.bbc.co.uk")
+      # adds new url and title to database
+      Bookmark.create(url) #title
+      expect(Bookmark.all).to include("http://www.bbc.co.uk")
+      # expect(bookmarks).to include("BBC Homepage")
     end
   end
 
