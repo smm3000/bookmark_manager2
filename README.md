@@ -28,6 +28,10 @@ As a user
 So I can save websites for later
 I want to add new bookmarks
 
+As a user
+So that I can remove a bookmark
+I want to delete a bookmark
+
 Client	Controller	Model	Views
 Add bookmark post request>>>>	/new>>>>>>>>>	"Bookmark Class
 Bookmark list"	

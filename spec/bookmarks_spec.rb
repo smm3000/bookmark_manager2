@@ -33,4 +33,18 @@ describe Bookmark do
     end
   end
 
+   
+  describe '#self.delete' do
+    it 'deletes a bookmark' do
+      bookmark = Bookmark.create(title: 'Test Bookmark', url: 'http://www.example.com')
+      Bookmark.delete(id: bookmark.id) 
+
+
+      expect(Bookmark.all.length).to eq 0
+      
+    end
+  end
+
+
+
 end
